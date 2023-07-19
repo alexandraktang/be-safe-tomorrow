@@ -5,14 +5,14 @@ using UnityEngine;
 public class ActionDisappear : MonoBehaviour
 {
     [SerializeField] bool isActive = false;
-    [SerializeField] float delay;
-    [SerializeField] GameObject objectToActivate;
-    [SerializeField] GameObject alarmSpriteObject;
-    
+    [SerializeField] float delay = 1.0f;
+    [SerializeField] Animator bubbleSpriteAnim;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DeactivateActionObject(delay));
+        
     }
 
     // Update is called once per frame
@@ -21,15 +21,8 @@ public class ActionDisappear : MonoBehaviour
         
     }
 
-    IEnumerator DeactivateActionObject(float delay)
+    public void DeactivateBubbleSprite()
     {
-        yield return new WaitForSeconds(delay);
-        objectToActivate.SetActive(false);
-        isActive = false;
-    }
-
-    public void DeactivateAlarmSprite()
-    {
-        alarmSpriteObject.SetActive(false);
+        bubbleSpriteAnim.SetBool("taskComplete", true);
     }
 }
