@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClosingOutScene : MonoBehaviour
 {
     private AudioSource[] allAudioSources;
     [SerializeField] AudioSource exitAudio;
-    [SerializeField] Animator sceneBGAnim;
+    [SerializeField] SpriteRenderer sceneBGSpriteRenderer;
+    [SerializeField] Sprite bg2;
+    [SerializeField] Sprite bg3;
     
     // Start is called before the first frame update
     void Start()
@@ -29,7 +32,7 @@ public class ClosingOutScene : MonoBehaviour
     {
         StopAllAudio();
         StartExitAudio();
-        SetReadyForSecond();
+        StartCoroutine(StartImageSequence());
     }
 
     void StopAllAudio() 
@@ -45,14 +48,13 @@ public class ClosingOutScene : MonoBehaviour
         exitAudio.gameObject.SetActive(true);
     }
 
-    public void SetReadyForSecond()
+    IEnumerator StartImageSequence()
     {
-        sceneBGAnim.SetBool("readyForSecond", true);
-    }
-
-    public void SetReadyForThird()
-    {
-        sceneBGAnim.SetBool("readyForThird", true);
+        yield return new WaitForSeconds(3f);
+        sceneBGSpriteRenderer.sprite = bg2;
+        yield return new WaitForSeconds(3f);
+        sceneBGSpriteRenderer.sprite = bg3;
+        yield return new WaitForSeconds(3f);   
     }
 }
 

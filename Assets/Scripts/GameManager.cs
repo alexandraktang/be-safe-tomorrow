@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionDisappear : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    [SerializeField] Animator bubbleSpriteAnim;
-
+    public bool changeBGIMG = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,5 @@ public class ActionDisappear : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void DeactivateBubbleSprite()
-    {
-        bubbleSpriteAnim.SetBool("taskComplete", true);
     }
 }

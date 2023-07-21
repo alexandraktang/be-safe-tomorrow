@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 284984191}
+  - component: {fileID: 284984192}
   m_Layer: 0
   m_Name: alarm
   m_TagString: Untagged
@@ -155,6 +156,25 @@ Transform:
   m_Father: {fileID: 631761332}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &284984192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284984190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de749de4b1d47c4bb98ba467d8012f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  actionSpriteRenderer: {fileID: 0}
+  nextActionIMGs: []
+  actionSFX: {fileID: 0}
+  delayTime: 0
+  actionAnimator: {fileID: 0}
+  taskComplete: 0
 --- !u!1 &358389932
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +312,8 @@ GameObject:
   m_Component:
   - component: {fileID: 631761332}
   - component: {fileID: 631761331}
-  - component: {fileID: 631761333}
+  - component: {fileID: 631761335}
+  - component: {fileID: 631761334}
   m_Layer: 0
   m_Name: scene background
   m_TagString: Untagged
@@ -366,26 +387,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &631761333
-Animator:
-  serializedVersion: 5
+--- !u!114 &631761334
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631761330}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dd208742d1c70424ebb2172ce739c889, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e5c64756a9ebb4c9b72c5b4eb2ca36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 631761335}
+  bgSpriteRenderer: {fileID: 631761331}
+  nextBGIMGs:
+  - {fileID: 21300000, guid: 91eeda2b9efd27442887b6a3252c9a83, type: 3}
+  - {fileID: 21300000, guid: 27d764f84138c8e45b44d45b0204d35d, type: 3}
+  delayTime: 3
+--- !u!114 &631761335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631761330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b42d6603b9f7042a77911aef1bd1c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeBGIMG: 0
 --- !u!1 &1260780655
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,8 +648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfa1b5b21b863b4e99517e8fa245f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  delay: 1
   bubbleSpriteAnim: {fileID: 1369055752}
 --- !u!1 &1328013045
 GameObject:
@@ -716,7 +746,6 @@ GameObject:
   - component: {fileID: 1369055751}
   - component: {fileID: 1369055752}
   - component: {fileID: 1369055753}
-  - component: {fileID: 1369055754}
   m_Layer: 0
   m_Name: bubble sprite
   m_TagString: Untagged
@@ -824,20 +853,6 @@ MonoBehaviour:
   delay: 1
   objectToActivate: {fileID: 1369055749}
   alarmSpriteObject: {fileID: 1260780655}
---- !u!114 &1369055754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369055749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7214d860372be441873157dd5920f11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exitAudio: {fileID: 358389934}
-  sceneBGAnim: {fileID: 631761333}
 --- !u!1 &1452428867
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,8 +911,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 86c1f2d10db07c149a2ad7137b33de25, type: 3}
-  m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0.65882355}
+  m_Sprite: {fileID: 21300000, guid: 4bf159efdd7166445af0d19afd931d20, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7176471}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -916,7 +931,7 @@ Transform:
   m_GameObject: {fileID: 1452428867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.297, y: -0.697, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4

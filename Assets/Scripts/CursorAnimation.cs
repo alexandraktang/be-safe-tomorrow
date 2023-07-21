@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class ClickToContinue : MonoBehaviour
+public class CursorAnimation : MonoBehaviour
 {
-    int timesClicked = 0;
     float timer = 0.0f;
-    float timerDelay = 5.0f;
+    float timerDelay = 3.5f;
     float timeScale = 1.0f;
 
     public bool taskComplete = false;
 
     [SerializeField] GameObject clickIcon;
-    [SerializeField] Animator alarmAnimController;
-    [SerializeField] Animator clickAnimController;
+    [SerializeField] ActionManager actionManager;
+    [SerializeField] Animator cursorAnimator;
     
     // Start is called before the first frame update
     void Start()
@@ -32,20 +31,18 @@ public class ClickToContinue : MonoBehaviour
     {
         timer += Time.deltaTime;
         
-        if (timesClicked >= 1)
+        if (actionManager.taskComplete)
         {
             taskComplete = true;
-            alarmAnimController.SetBool("taskComplete", true);
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            clickAnimController.SetBool("blinkActive", false);
+            cursorAnimator.SetBool("blinkActive", false);
             timer = 0.0f;
-            timesClicked++;
         }
         else if (timer > timerDelay)
         {
-            clickAnimController.SetBool("blinkActive", true);
+            cursorAnimator.SetBool("blinkActive", true);
             timer = timer - timerDelay;
             Time.timeScale = timeScale;
         }
