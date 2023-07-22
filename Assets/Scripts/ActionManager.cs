@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ActionManager : MonoBehaviour
 {
-    [SerializeField] GameManager gameManager;
+    GameManager gameManager;
     [SerializeField] SpriteRenderer actionSpriteRenderer;
     [SerializeField] List<Sprite> nextActionIMGs;
     [SerializeField] AudioSource actionSFX;
@@ -16,11 +16,11 @@ public class ActionManager : MonoBehaviour
     int actionIMGCounter = 0;
 
     public bool taskComplete = false;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = this.gameObject.GetComponentInParent<GameManager>();
     }
 
     void Awake()
@@ -37,11 +37,9 @@ public class ActionManager : MonoBehaviour
             ChangeBubbleSpriteIMG();
             swappingIMG = false;
         }
-
-        if (actionIMGCounter >= nextActionIMGs.Count)
+        else if (Input.GetMouseButtonUp(0) == true && swappingIMG == false && actionIMGCounter == nextActionIMGs.Count)
         {
-            taskComplete = true;
-            actionAnimator.SetBool("taskComplete", taskComplete);
+            ActionAnimOut();
         }
     }
 
@@ -50,6 +48,12 @@ public class ActionManager : MonoBehaviour
         actionSpriteRenderer.sprite = nextActionIMGs.ElementAt(actionIMGCounter);
         actionIMGCounter++;
         actionSFX.Play();
+    }
+
+    void ActionAnimOut()
+    {
+        taskComplete = true;
+        actionAnimator.SetBool("taskComplete", taskComplete);
     }
 
     public void SetBGSeqActive()

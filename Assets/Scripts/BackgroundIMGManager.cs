@@ -18,6 +18,7 @@ public class BackgroundIMGManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("changeBGIMG: " + gameManager.changeBGIMG);
         if (gameManager.changeBGIMG == true)
         {
             gameManager.changeBGIMG = false;

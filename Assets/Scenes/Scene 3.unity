@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 144013742}
   - component: {fileID: 144013743}
   m_Layer: 0
-  m_Name: coffee bubble
+  m_Name: phone bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,8 +151,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144013738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.276, y: 0.435, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.056, y: 0.123, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 631761332}
   m_RootOrder: 0
@@ -217,7 +217,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 46519a1bdad0bcb4b9a33fb154735eea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7252b4135e6f434c8b08c65a0fa1562, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -243,9 +243,8 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   actionSpriteRenderer: {fileID: 144013741}
   nextActionIMGs:
-  - {fileID: 21300000, guid: 1135a99f5f51c404d8de2e7d454c4b32, type: 3}
-  - {fileID: 21300000, guid: 7c3b372d41db93c4a8eafbe8fc8847a4, type: 3}
-  - {fileID: 21300000, guid: ff2e5e07f1db43a44bf61118b6f8f48c, type: 3}
+  - {fileID: 21300000, guid: dab538dc90b2c564194a62b62cb00092, type: 3}
+  - {fileID: 21300000, guid: 50d7d714b9a6d1e4f9a0abfcffdbf7fc, type: 3}
   actionSFX: {fileID: 144013743}
   delayTime: 0.5
   actionAnimator: {fileID: 144013740}
@@ -260,7 +259,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6268d9bc9f7a99a43ab38149cb8d1598, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 00cc835bff42ef1458a09880b911a355, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -532,7 +531,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 816d8a278bc01354f8dffb0e58c83080, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd686d99ece47a448948ad47739f266c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -551,7 +550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631761330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.066, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 144013739}
@@ -640,7 +639,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.63
+  orthographic size: 1.64
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
