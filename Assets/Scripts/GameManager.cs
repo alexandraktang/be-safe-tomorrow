@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager: MonoBehaviour
 {
     public bool changeBGIMG = false;
+    public bool bgSequenceComplete = false;
     
     // Start is called before the first frame update
     void Start()

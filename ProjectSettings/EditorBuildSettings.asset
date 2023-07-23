@@ -6,12 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/00 - Main Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Scene 1.unity
+    path: Assets/Scenes/Day One/01 -Wake Up.unity
     guid: 93717babdc02f014c89e9f2b565242ee
   - enabled: 1
-    path: Assets/Scenes/Scene 2.unity
+    path: Assets/Scenes/Day One/02 - Coffee.unity
     guid: af00957108f1fa1439d5ab8ac915a004
+  - enabled: 1
+    path: Assets/Scenes/Day One/03 - Commute.unity
+    guid: cce733f8fd8836542a1108f465dd1205
+  - enabled: 1
+    path: Assets/Scenes/Day One/04 - Work.unity
+    guid: b27bc36174557664b8bd00e12d13c6bb
+  - enabled: 1
+    path: Assets/Scenes/Day One/05 - Dinner 1.unity
+    guid: 123faae006768fe4ba723c56ea8543ea
+  - enabled: 1
+    path: Assets/Scenes/Day One/06 - Bedtime.unity
+    guid: 5892fe3ee7aac4246a68722301c3d17e
   m_configObjects: {}
