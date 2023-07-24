@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class ClickToContinue : MonoBehaviour
@@ -10,19 +9,10 @@ public class ClickToContinue : MonoBehaviour
     float timerDelay = 5.0f;
     float timeScale = 1.0f;
 
-    public bool taskComplete = false;
-
-    [SerializeField] GameObject clickIcon;
-    [SerializeField] Animator alarmAnimController;
     [SerializeField] Animator clickAnimController;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] BackgroundIMGManager bgIMGManager;
 
-    void Awake()
+    void Start()
     {
 
     }
@@ -30,29 +20,24 @@ public class ClickToContinue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        if (!bgIMGManager.bgIMGSequenceOngoing && !bgIMGManager.bgIMGSequenceComplete)
+        {
+            timer += Time.deltaTime;
         
-        if (timesClicked >= 1)
-        {
-            taskComplete = true;
-            alarmAnimController.SetBool("taskComplete", true);
+            if (Input.GetMouseButtonUp(0))
+            {
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                clickAnimController.SetBool("blinkActive", false);
+                timer = 0.0f;
+                timesClicked++;
+            }
+            else if (timer > timerDelay)
+            {
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                clickAnimController.SetBool("blinkActive", true);
+                timer = timer - timerDelay;
+                Time.timeScale = timeScale;
+            }
         }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            clickAnimController.SetBool("blinkActive", false);
-            timer = 0.0f;
-            timesClicked++;
-        }
-        else if (timer > timerDelay)
-        {
-            clickAnimController.SetBool("blinkActive", true);
-            timer = timer - timerDelay;
-            Time.timeScale = timeScale;
-        }
-    }
-
-    public bool GetTaskComplete()
-    {
-        return taskComplete;
     }
 }

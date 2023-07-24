@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DragDropManager : MonoBehaviour
 {
+    [SerializeField] Camera mainCamera;
     Vector3 initialPosition;
     Vector3 mousePosition;
     SpriteRenderer draggableObjectSpriteRenderer;
@@ -20,7 +21,7 @@ public class DragDropManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        mainCamera.ScreenPointToRay(Input.mousePosition);
     }
 
     Vector3 GetMousePosition()

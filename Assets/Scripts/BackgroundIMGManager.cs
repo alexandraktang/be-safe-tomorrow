@@ -10,11 +10,15 @@ public class BackgroundIMGManager : MonoBehaviour
     [SerializeField] List<Sprite> nextBGIMGs;
     [SerializeField] float delayTime;
     [SerializeField] GameObject nextSceneArrow;
+    public bool bgIMGSequenceOngoing;
+    public bool bgIMGSequenceComplete;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = gameManagerObj.GetComponent<GameManager>();
+        bgIMGSequenceOngoing = false;
+        bgIMGSequenceComplete = false;
     }
 
     // Update is called once per frame
@@ -29,12 +33,16 @@ public class BackgroundIMGManager : MonoBehaviour
 
     IEnumerator StartBGImageSequence()
     {
+        bgIMGSequenceOngoing = true;
+
         foreach (Sprite bgIMG in nextBGIMGs)
         {
             yield return new WaitForSeconds(delayTime);
             bgSpriteRenderer.sprite = bgIMG;
         }
 
+        bgIMGSequenceOngoing = false;
+        bgIMGSequenceComplete = true;
         nextSceneArrow.SetActive(true);
         gameManager.bgSequenceComplete = true;
     }
