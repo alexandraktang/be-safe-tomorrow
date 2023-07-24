@@ -5,13 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] GameManager gameManager;
-    int sceneIndex;
+    [SerializeField] GameObject gameManagerObj;
+    GameManager gameManager;
+    [SerializeField] int sceneLoadIndex;
+    [SerializeField] int sceneUnloadIndex;
     bool loaded;
 
+    void Start()
+    {
+        gameManager = gameManagerObj.GetComponent<GameManager>();
+    }
+    
     void Awake()
     {
-        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        
     }
     
     void Update()
@@ -27,8 +34,9 @@ public class SceneLoader : MonoBehaviour
     {
         if (!loaded)
         {
-            SceneManager.LoadSceneAsync(sceneIndex + 1, LoadSceneMode.Additive);
+            AsyncOperation load = SceneManager.LoadSceneAsync(sceneLoadIndex, LoadSceneMode.Additive);
             loaded = true;
+            SceneManager.UnloadSceneAsync(sceneUnloadIndex);
         }
     }
 }

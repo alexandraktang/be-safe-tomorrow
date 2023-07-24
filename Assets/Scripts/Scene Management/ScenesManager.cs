@@ -6,26 +6,31 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
     public static ScenesManager scenesManager;
-    bool gameStart = true;
+    bool gameStart;
+    GameObject canvas;
+    AsyncOperation firstLoad;
     
+    void Start()
+    {
+        canvas = GameObject.Find("Canvas");
+    }
     void Awake()
     {
         if (!gameStart)
         {
             scenesManager = this;
-            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+            firstLoad = SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+            StartCoroutine(TurnOffMMCanvas());
             gameStart = true;
         }
     }
 
-    public void UnloadScene(int sceneIndex)
+    IEnumerator TurnOffMMCanvas()
     {
-        StartCoroutine(Unload(sceneIndex));
-    }
-
-    IEnumerator Unload(int sceneIndex)
-    {
-        yield return new WaitForEndOfFrame();
-        SceneManager.UnloadSceneAsync(sceneIndex);
+        yield return new WaitUntil(() => firstLoad.isDone);
+        if (canvas.activeInHierarchy)
+        {
+            canvas.SetActive(false);
+        }
     }
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BackgroundIMGManager : MonoBehaviour
 {
-    [SerializeField] GameManager gameManager;
+    [SerializeField] GameObject gameManagerObj;
+    GameManager gameManager;
     [SerializeField] SpriteRenderer bgSpriteRenderer;
     [SerializeField] List<Sprite> nextBGIMGs;
     [SerializeField] float delayTime;
@@ -13,7 +14,7 @@ public class BackgroundIMGManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = gameManagerObj.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -24,8 +25,6 @@ public class BackgroundIMGManager : MonoBehaviour
             gameManager.changeBGIMG = false;
             StartCoroutine(StartBGImageSequence());
         }
-
-        Debug.Log("bgSequenceComplete: " + gameManager.bgSequenceComplete);
     }
 
     IEnumerator StartBGImageSequence()

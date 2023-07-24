@@ -9,21 +9,63 @@ EditorBuildSettings:
     path: Assets/Scenes/00 - Main Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Day One/01 -Wake Up.unity
-    guid: 93717babdc02f014c89e9f2b565242ee
+    path: Assets/Scenes/01 - ConstantScene.unity
+    guid: 8ba1ad069d42cec4296d0922fe21dfb2
   - enabled: 1
-    path: Assets/Scenes/Day One/02 - Coffee.unity
+    path: Assets/Scenes/Day One/02 - Wake Up.unity
+    guid: 164699f5f5c7d164ba1a9ad99df98484
+  - enabled: 1
+    path: Assets/Scenes/Day One/03 - Coffee.unity
     guid: af00957108f1fa1439d5ab8ac915a004
   - enabled: 1
-    path: Assets/Scenes/Day One/03 - Commute.unity
+    path: Assets/Scenes/Day One/04 - Commute.unity
     guid: cce733f8fd8836542a1108f465dd1205
   - enabled: 1
-    path: Assets/Scenes/Day One/04 - Work.unity
-    guid: b27bc36174557664b8bd00e12d13c6bb
+    path: Assets/Scenes/Day One/05 - Work.unity
+    guid: 6165d5d5a89144c4e925a46969672693
   - enabled: 1
-    path: Assets/Scenes/Day One/05 - Dinner 1.unity
-    guid: 123faae006768fe4ba723c56ea8543ea
+    path: Assets/Scenes/Day One/06 - Dinner.unity
+    guid: 35835d9b9ce63ef4c8c0bc94e598833e
   - enabled: 1
-    path: Assets/Scenes/Day One/06 - Bedtime.unity
-    guid: 5892fe3ee7aac4246a68722301c3d17e
+    path: Assets/Scenes/Day One/07 - Bedtime.unity
+    guid: 3b5228cb0b1e6554eab1df8779e5ca1a
+  - enabled: 1
+    path: Assets/Scenes/Day Two/08 - Wake Up.unity
+    guid: a20e1cb8916359d48a898f61493224a5
+  - enabled: 1
+    path: Assets/Scenes/Day Two/09 - Coffee.unity
+    guid: 4afc53eb9b7235242b1f499f90b74c1d
+  - enabled: 1
+    path: Assets/Scenes/Day Two/10 - Commute.unity
+    guid: 029337f7f861239479636ae70222c06b
+  - enabled: 1
+    path: Assets/Scenes/Day Two/11 - Work.unity
+    guid: cb62d9772dc2c6f4d819f94449f3bd6f
+  - enabled: 1
+    path: Assets/Scenes/Day Two/12 - Dinner.unity
+    guid: 20b5de4dc132f3f4588c1f0c63862b7a
+  - enabled: 1
+    path: Assets/Scenes/Day Two/13 - Bedtime.unity
+    guid: 110408e6227a87f458b3ddd4d5fe18f6
+  - enabled: 1
+    path: Assets/Scenes/Day Three/14 - Wake Up.unity
+    guid: aa8087e2e2de74b4f81d7a14f481da3e
+  - enabled: 1
+    path: Assets/Scenes/Day Three/15 - Coffee.unity
+    guid: bf6b6e1d82c36ff4cbebd5626a5b3429
+  - enabled: 1
+    path: Assets/Scenes/Day Three/16 - Commute.unity
+    guid: fb4065c059a0114448830a7f04a26d79
+  - enabled: 1
+    path: Assets/Scenes/Day Three/17 - Work.unity
+    guid: 6c5f5fc62e84cbc4d9ba204c47158535
+  - enabled: 1
+    path: Assets/Scenes/Day Three/18 - Dinner.unity
+    guid: 8c04f4cdc5b224542950d56dbf117d56
+  - enabled: 1
+    path: Assets/Scenes/Day Three/19 - Bedtime.unity
+    guid: c773ce5411397274fab8a6d194ebb9e1
+  - enabled: 1
+    path: Assets/Scenes/Doomsday/20 - Doomsday TBD.unity
+    guid: f3db0f9529da4de4097aa2df9f46f13a
   m_configObjects: {}
